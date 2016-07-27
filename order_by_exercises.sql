@@ -6,4 +6,4 @@ WHERE gender = 'M'
 and (first_name = 'Irena'
 or first_name = 'Vidya'
 or first_name = 'Maya')
-order by first_name asc;
+order by first_name asc, last_name asc;
