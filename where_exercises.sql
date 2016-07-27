@@ -3,7 +3,7 @@ SELECT * FROM employees WHERE hire_date = '1985-01-01';
 
 SELECT emp_no, birth_date, first_name, last_name, gender, hire_date
 FROM employees
-WHERE emp_no >= 10200
+WHERE gender = 'M'
 AND (
 	first_name = 'Irena'
 	OR first_name = 'Vidya'
