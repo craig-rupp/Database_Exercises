@@ -48,5 +48,5 @@ FROM employees
 where last_name NOT like '%qu'
 AND last_name LIKE 'q%'
 GROUP by first_name, last_name
-ORDER BY count(distinct last_name);
+ORDER BY count(last_name);
 

@@ -30,10 +30,10 @@ FROM employees
 WHERE last_name NOT LIKE '%qu%'
 AND last_name LIKE '%q%';
 
-SELECT emp_no, last_name, hire_date, birth_date
-FROM employees
-WHERE birth_date LIKE '%-12-25';
+-- SELECT emp_no, last_name, hire_date, birth_date
+-- FROM employees
+-- WHERE birth_date LIKE '%-12-25';
 
-SELECT emp_no, first_name, last_name, gender, hire_date
-FROM employees
-WHERE last_name LIKE '%q%';
+-- SELECT emp_no, first_name, last_name, gender, hire_date
+-- FROM employees
+-- WHERE last_name LIKE '%q%';
