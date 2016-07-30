@@ -76,16 +76,13 @@ WHERE de.to_date = '9999-01-01' AND t.to_date = '9999-01-01' AND d.dept_name = '
 GROUP BY title;
 
 --Find Current Salary
-SELECT 
-d.dept_no as 'Department Name',
-concat(e.first_name, ' ', e.last_name) as 'Name',
-s.salary as 'salary'
-from departments d
-join dept_manager dm on d.dept_no = dm.dept_no
-join employees e on dm.emp_no = e.emp_no
-join salaries s on e.emp_no = s.emp_no
-where s.to_date = '9999-01-01'
-and dm.to_date = '9999-01-01';
+SELECT d.dept_name as 'Department Name', CONCAT(e.first_name, ' ', e.last_name) as 'Current Manager', s.salary as 'Salary'
+FROM departments as d
+JOIN dept_manager as dm on d.dept_no = dm.dept_no
+JOIN employees as e on dm.emp_no = e.emp_no
+JOIN salaries as s on e.emp_no = s.emp_no
+where dm.to_date = '9999-01-01'
+and s.to_date = '9999-01-01';
 
 
 
