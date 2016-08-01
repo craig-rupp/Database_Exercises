@@ -85,6 +85,19 @@ where dm.to_date = '9999-01-01'
 and s.to_date = '9999-01-01';
 
 
+--Bonus
+SELECT
+	CONCAT(employees.first_name, " ", employees.last_name) AS employee_name,
+	departments.dept_name AS department_name,
+	CONCAT(emps2.first_name, " ", emps2.last_name) AS manager
+FROM employees AS emps
+JOIN dept_emp ON dept_emp.emp_no = emps.emp_no AND dept_emp.to_date = '9999-01-01'
+JOIN departments AS depts ON depts.dept_no = dept_emp.dept_no
+JOIN dept_manager AS dmgrs ON dmgrs.dept_no = depts.dept_no AND dmgrs.to_date = '9999-01-01'
+JOIN employees AS emps2 ON emps2.emp_no = dmgrs.emp_no
+ORDER BY depts.dept_name ASC;
+
+
 
 
 
